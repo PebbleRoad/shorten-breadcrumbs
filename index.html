@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Breadcrumbs</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    
+
+    <nav class="nav-crumbs">
+        <a href="#">Home</a>
+        <a href="#">Level 1</a>
+        <a href="#">Level 2</a>
+        <a href="#">Level 3</a>
+        <a href="#">Level 4</a>
+        <a href="#">Level 5</a>
+        <a href="#">Level 6</a>
+    </nav>
+
+    
+    <form action="">
+        
+        <button class="crumb-activate">Trim long breadcrumb</button>
+
+        <br>
+        <br>
+
+        <p>How many links you want to show in the breadcrumbs?</p>
+        <input type="text" class="crumb-length" value="3">
+        <button class="crumb-submit">Update</button>
+    </form>
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="jquery.breadcrumbs.js"></script>
+    <script>
+        $(function(){
+
+            var $c = $('.nav-crumbs');            
+
+            /* Crumb Submits */
+
+            $('.crumb-activate').click(function(){
+
+                $c.trimcrumbs();
+
+                return false;
+
+            })
+
+            $('.crumb-submit').click(function(e){
+
+
+                $c.data('trimcrumbs').refresh({
+                    length: $('.crumb-length').val()
+                })
+
+                return false;
+
+            })
+
+        })
+    </script>
+    
+</body>
+</html>

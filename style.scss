@@ -1,0 +1,95 @@
+/**
+ * body
+ */
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    width: 960px;
+    margin: 40px auto;
+}
+
+form{
+    padding-top: 100px;
+}
+
+/**
+ * Breadcrumbs
+ */
+
+$link-color: #2895f1;
+.nav-crumbs{
+
+    position: relative;
+    border: 1px #ccc solid;
+    padding-left: 1em;
+
+    > a{
+        text-decoration: none;
+        color: $link-color;
+        padding: 1em 5px;
+
+        &:after{
+            content: "›";
+            color: #888;
+            font-size: 22px;
+            padding-left: 10px;
+        }
+
+        &:last-child{
+
+            color: #888;
+            cursor: text;
+
+            &:after{
+                display: none;
+            }
+        }
+    }
+
+    /**
+     * crumb dropdown link
+     */
+
+    .crumb-dropdown-link{
+        &:after{
+            content: "▼";
+            font-size: 12px;
+        }
+    }
+}
+
+
+/**
+ * Dropdown
+ */
+
+.crumb-dropdown{
+    position: absolute;
+    left: 0;
+    top: 100%;
+    min-width: 140px;
+    border: 1px #ccc solid;
+    padding: 5px 0;
+    background: #fff;
+    display: none;
+
+    > a{
+        display: block;
+        padding: 5px 1em;
+        text-decoration: none;
+        color: $link-color;
+
+        &:hover{
+            background: #eee;
+        }
+    }
+
+    .dropdown-is-shown &{
+        display: block;
+    }
+}
+
+
